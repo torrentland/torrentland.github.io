@@ -1,0 +1,680 @@
+@charset "UTF-8";
+/*
+ * Make web 2.0 websites without JavaScript!!
+ * Developers : KiddyTheKid & Nova
+ * Licensed under BSD-3-Clause
+ * Version : 20210402
+ */
+
+@keyframes anim-nova-toggle {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 500px;
+  }
+}
+@font-face {
+	font-family: storopia;
+	src:url(/assets/fonts/Storopia.woff) format('woff')
+}
+* {
+  font-family: storopia, sans-serif
+  margin: 0;
+  padding: 0;
+}
+
+*:root {
+  background: #000000;
+  background-image:url("../../assets/img/stars.gif");
+  color: #A9A9A9;
+}
+
+
+address, area, article, aside, audio, blockquote, datalist,
+dl, details, fieldset, figure, form, input, iframe, meter,
+nav, ol, optgroup, option, output, p, pre, progress, ruby,
+section {
+  margin-bottom: 1rem;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+@media (min-width: 400px) {
+  .container {
+    width: 85%;
+    padding: 0;
+  }
+}
+@media (min-width: 550px) {
+  .container {
+    width: 80%;
+  }
+}
+
+.row .col {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+@media (min-width: 550px) {
+  .row .col {
+    margin-left: 4%;
+  }
+  .row .col:first-child, .row .col:first-child {
+    margin-left: 0;
+  }
+}
+@media (min-width: 550px) {
+  .row .one {
+    width: 4.6666666667%;
+  }
+  .row .two {
+    width: 13.3333333333%;
+  }
+  .row .three {
+    width: 22%;
+  }
+  .row .four {
+    width: 30.6666666667%;
+  }
+  .row .five {
+    width: 39.3333333333%;
+  }
+  .row .six {
+    width: 48%;
+  }
+  .row .seven {
+    width: 56.6666666667%;
+  }
+  .row .eight {
+    width: 65.3333333333%;
+  }
+  .row .nine {
+    width: 74%;
+  }
+  .row .ten {
+    width: 82.6666666667%;
+  }
+  .row .eleven {
+    width: 91.3333333333%;
+  }
+  .row .twelve {
+    width: 100%;
+    margin-left: 0;
+  }
+  .row .fill-one {
+    margin-left: 8.6666666667%;
+  }
+  .row .fill-two {
+    margin-left: 17.3333333333%;
+  }
+  .row .fill-three {
+    margin-left: 26%;
+  }
+  .row .fill-four {
+    margin-left: 34.6666666667%;
+  }
+  .row .fill-five {
+    margin-left: 43.3333333333%;
+  }
+  .row .fill-six {
+    margin-left: 52%;
+  }
+  .row .fill-seven {
+    margin-left: 60.6666666667%;
+  }
+  .row .fill-eight {
+    margin-left: 69.3333333333%;
+  }
+  .row .fill-nine {
+    margin-left: 78%;
+  }
+  .row .fill-ten {
+    margin-left: 86.6666666667%;
+  }
+  .row .fill-eleven {
+    margin-left: 95.3333333333%;
+  }
+}
+
+blockquote {
+  padding: 1.5rem;
+  background: #111111;
+  border-left: 5px solid #222222;
+}
+blockquote *:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+fieldset {
+  margin-top: 1rem;
+  padding: 2rem;
+  border: 1px solid #222222;
+  border-radius: 4px;
+}
+
+input {
+  font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 6px 12px;
+  margin-bottom: 0.5rem;
+  background: #111111;
+  color: #eeeeee;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+img {
+  margin-bottom: 1rem;
+  max-width: 100%;
+}
+
+ol {
+  padding-left: 2rem;
+}
+ol ul {
+  margin-bottom: 0;
+}
+ol ol {
+  margin-bottom: 0;
+}
+
+pre {
+  font-family: Consolas, monaco, "Ubuntu Mono", "Liberation Mono", "Courier New", Courier, monospace;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 0.9em;
+  padding: 1rem 1.4rem;
+  max-width: 100%;
+  overflow: auto;
+}
+pre code {
+  background: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+table caption {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  margin-bottom: 1rem;
+  max-width: 100%;
+  padding: 6px 12px;
+  margin-bottom: 0.5rem;
+  background: #111111;
+  color: #eeeeee;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+ul {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+ul ul {
+  margin-bottom: 0;
+}
+ul ol {
+  margin-bottom: 0;
+}
+
+video {
+  margin-bottom: 1rem;
+}
+
+html {
+  font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+select {
+  font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: 6px 12px;
+  margin-bottom: 0.5rem;
+  background: #111111;
+  color: #eeeeee;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: "Oswald", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background: #FFFFFF;
+  color: #000000;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #000000;
+}
+button:focus {
+  background: #FFFFFF;
+}
+button:enabled:hover {
+  background: #FFFFFF;
+}
+
+body {
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 6px;
+  overflow-x: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  color: #eeeeee;
+  font-size: 1.03rem;
+  line-height: 1.5;
+  max-width: 800px;
+}
+body::selection {
+  background: #FFFFFF;
+  color: #FFFFFF;
+}
+
+h1 {
+  line-height: 1;
+  color: #ffffff;
+  padding-top: 0.875rem;
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #111111;
+  font-size: 2.25rem;
+}
+
+h2 {
+  line-height: 1;
+  color: #ffffff;
+  padding-top: 0.875rem;
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #111111;
+  font-size: 1.85rem;
+}
+
+h3 {
+  line-height: 1;
+  color: #ffffff;
+  padding-top: 0.875rem;
+  color: #ffffff;
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #111111;
+  font-size: 1.55rem;
+}
+
+h4 {
+  line-height: 1;
+  color: #ffffff;
+  padding-top: 0.875rem;
+  margin-bottom: 0.3rem;
+  font-size: 1.25rem;
+}
+
+h5 {
+  line-height: 1;
+  color: #ffffff;
+  padding-top: 0.875rem;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+h6 {
+  line-height: 1;
+  color: #ffffff;
+  padding-top: 0.875rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.875rem;
+}
+
+a {
+  color: #FFFFFF;
+}
+a:hover {
+  color: #FFFFFF;
+}
+a button {
+  font-size: 1rem;
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background: #FFFFFF;
+  color: #000000;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #000000;
+}
+a button[disabled] {
+  cursor: default;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+abbr {
+  cursor: help;
+}
+abbr:hover {
+  cursor: help;
+}
+
+header {
+  background: #111111;
+  border-bottom: 1px solid #222222;
+  padding: 2rem 1.5rem;
+  margin: -2rem calc(0px - (50vw - 50%)) 2rem;
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+header h1 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+header h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+header h3 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+header > *:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+header > *:last-child {
+  margin-bottom: 0;
+}
+
+input[type=submit] {
+  font-size: 1rem;
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background: #FFFFFF;
+  color: #000000;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #000000;
+}
+input[type=submit]:focus {
+  background: #FFFFFF;
+}
+input[type=submit]:enabled:hover {
+  background: #FFFFFF;
+}
+
+input[type=reset] {
+  font-size: 1rem;
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background: #FFFFFF;
+  color: #000000;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #000000;
+}
+input[type=reset]:focus {
+  background: #FFFFFF;
+}
+input[type=reset]:enabled:hover {
+  background: #FFFFFF;
+}
+
+input[type=button] {
+  font-size: 1rem;
+  display: inline-block;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background: #FFFFFF;
+  color: #000000;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #000000;
+}
+input[type=button]:focus {
+  background: #FFFFFF;
+}
+input[type=button]:enabled:hover {
+  background: #FFFFFF;
+}
+
+button[disabled] {
+  cursor: default;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input[type=submit][disabled] {
+  cursor: default;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input[type=reset][disabled] {
+  cursor: default;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input[type=button][disabled] {
+  cursor: default;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:focus {
+  background: #FFFFFF;
+}
+.button:enabled:hover {
+  background: #FFFFFF;
+}
+
+code {
+  font-family: Consolas, monaco, "Ubuntu Mono", "Liberation Mono", "Courier New", Courier, monospace;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 0.9em;
+}
+code pre {
+  display: inline;
+  background: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+kbd {
+  font-family: Consolas, monaco, "Ubuntu Mono", "Liberation Mono", "Courier New", Courier, monospace;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 0.9em;
+  border-bottom: 3px solid #222222;
+}
+
+samp {
+  font-family: Consolas, monaco, "Ubuntu Mono", "Liberation Mono", "Courier New", Courier, monospace;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 0.9em;
+}
+
+.nova-menu-button {
+  padding: 0.6rem 1rem;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  display: block;
+  position: relative;
+  text-align: center;
+}
+.nova-menu-button summary::marker {
+  content: "" !important;
+  display: none !important;
+}
+@media (min-width: 550px) {
+  .nova-menu-button {
+    display: none;
+  }
+}
+
+.nova-menu-list {
+  display: none;
+  position: relative;
+  text-align: center;
+  padding-left: 0;
+  overflow: hidden;
+}
+.nova-menu-list li {
+  display: block;
+  position: relative;
+}
+@media (min-width: 550px) {
+  .nova-menu-list {
+    display: block;
+    text-align: left;
+  }
+  .nova-menu-list li {
+    display: inline-block;
+    position: relative;
+    margin: auto 12px;
+  }
+}
+
+.nova-menu-button[open] + .nova-menu-list {
+  display: block;
+  max-height: 0px;
+  padding-bottom: 15px;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  animation-name: anim-nova-toggle;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd::before {
+  content: "→ ";
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #222222;
+  margin: 1rem auto;
+}
+
+legend {
+  padding: auto 0.5rem;
+}
+
+td {
+  border: 1px solid #222222;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+th {
+  border: 1px solid #222222;
+  text-align: left;
+  padding: 0.5rem;
+  background: #111111;
+}
+
+tr:nth-child(even) {
+  background: #111111;
+}
+
+li {
+  margin-top: 0.4rem;
+}
+
+mark {
+  padding: 3px 6px;
+  background: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.container:after, .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.full-width {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.nova-brand-logo {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+.nova-brand-logo img {
+  width: 85%;
+}
+@media (min-width: 550px) {
+  .nova-brand-logo {
+    width: 120px;
+  }
+}
+
+/*# sourceMappingURL=mirage.css.map */
